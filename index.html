@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portafolio - Daniel Augusto Muñoz Viveros</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f1f1f1;
+      color: #1d3557;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #1d3557;
+      color: white;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+
+    nav a {
+      margin-left: 20px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .hero {
+      background-color: transparent;
+      padding: 80px 40px;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+      text-align: left;
+    }
+
+    .hero h2 {
+      font-size: 1.8rem;
+      color: #073b4c;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: #073b4c;
+      max-width: 900px;
+      text-align: justify;
+    }
+
+    .about {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      background-color: #ffffff;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 40px;
+      text-align: justify;
+    }
+
+    .about-text {
+      flex: 1;
+    }
+
+    .about-img {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    .about-img img {
+        width: 400px;
+        max-width: 100%;
+        border-radius: 12px;
+        margin-bottom: 20px;
+    }
+
+
+    .about-buttons .btn-link {
+  display: inline-block;
+  background-color: #1d3557;
+  color: white;
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.about-buttons .btn-link:hover {
+  background-color: #457b9d;
+}
+
+
+    .skills {
+      padding: 60px 20px;
+    }
+
+    /* NUEVO GRID RESPONSIVO PARA LAS SKILLS */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 20px;
+    }
+
+    @media (min-width: 600px) {
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 900px) {
+      .skills-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .grid-container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 20px;
+}
+
+@media (min-width: 700px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1000px) {
+  .grid-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
+    .skill-item, .card {
+      background-color: #ffffff;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .skill-item img {
+      height: 40px;
+      margin-bottom: 10px;
+    }
+
+    .card-title {
+      font-weight: bold;
+      font-size: 1.25rem;
+      margin-bottom: 10px;
+      color: #1d3557;
+    }
+
+    .card-description {
+      font-size: 1rem;
+      color: #444;
+      margin-bottom: 10px;
+    }
+
+    .card-link {
+      font-size: 0.95rem;
+      font-weight: bold;
+      color: #1d3557;
+      text-decoration: none;
+    }
+
+    .card-link:hover {
+      text-decoration: underline;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .social-icons img {
+      height: 32px;
+      transition: transform 0.2s ease;
+    }
+
+    .social-icons img:hover {
+      transform: scale(1.2);
+    }
+
+    footer {
+      background-color: #1d3557;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+        <img src="assets/Foto.jpg" alt="Logo" style="height: 60px; border-radius: 50%;">
+      </div>
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#skills">Skills</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="inicio" style="text-align: left;">
+    <div style="background-color: white; border-radius: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); padding: 40px;">
+    <h1>Daniel Augusto Muñoz Viveros</h1>
+    <h2>¡Explorando Datos y Descubriendo Patrones!</h2>
+    <p>Mi experiencia combina el análisis de datos, el modelado predictivo y el desarrollo de herramientas basadas en IA, con un enfoque práctico en proyectos que integran tecnología e innovación. <b>Aspiro a construir soluciones inteligentes, comprensibles y escalables que contribuyan.</b></p>
+    </div>
+  </section>
+
+  <section class="about" id="sobre-mi">
+    <div class="about-text">
+      <h2>👨‍💻 Sobre mí</h2>
+      <br>
+      <p>¡Hola! Soy Daniel — Científico de datos, doctorando en ingeniería e incansable curioso del mundo.</p>
+      <br>
+      <p>Me especializo en aplicar <b>inteligencia artificial</b> y <b>ciencia de datos</b> para resolver problemas reales.</p>
+      <br>
+      <p>Fuera del código y los datos, soy creador del blog <b>Acumulando Riqueza</b>, donde comparto conocimientos sobre educación financiera, inversión y hábitos para construir libertad financiera a largo plazo. Disfruto ver y jugar al futbol ⚽, leer biografías de personas brillantes 💡, y escuchar buena música 🎧 para desconectar y volver a conectar.</p>
+      <br>
+      <p>👉 ¿Te interesa colaborar, compartir ideas o simplemente charlar sobre IA, ciencia de datos o finanzas?</p>
+      <br>
+      <div class="about-buttons">
+        <a href="https://linkedin.com/in/16danielvm" target="_blank" class="btn-link">📩 Contactame</a>
+        <a href="assets/ES - Daniel Muñoz Viveros Resume.pdf" download class="btn-link">📄 Descarga mi CV</a>
+      </div>
+      
+    </div>
+    <div class="about-img">
+      <img src="assets/Foto.jpg" alt="Foto de Daniel">
+    </div>
+  </section>
+
+  <section class="skills" id="skills">
+    <h2>🛠️ Skills Técnicos</h2>
+    <br>
+    <div class="skills-grid">
+      <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"><div>Python</div></div>
+      <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg" alt="R"><div>R</div></div>
+      <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy"><div>NumPy</div></div>
+      <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas"><div>Pandas</div></div>
+      <div class="skill-item"><img src="assets/scipy.png" alt="SciPy"><div>SciPy</div></div>
+      <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matplotlib/matplotlib-original.svg" alt="Matplotlib"><div>Matplotlib</div></div>
+      <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/scikitlearn/scikitlearn-original.svg" /><div>Scikit-learn</div></div>
+      <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow"><div>TensorFlow</div></div>
+      <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code"><div>VS Code</div></div>
+      <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL"><div>MySQL</div></div>
+      <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL"><div>PostgreSQL</div></div>
+      <div class="skill-item"><img src="assets/Powerbi.png" alt="Power BI"><div>Power BI</div></div>
+      <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"><div>Git</div></div>
+      <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub"><div>GitHub</div></div>
+      <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" /><div>AWS</div></div>
+      <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker"><div>Docker</div></div>
+    </div>
+  </section>
+
+  <section id="proyectos">
+    <h2>🚀 Proyectos</h2>
+    <br>
+    <div class="grid-container">
+  
+      <div class="card">
+        <div class="card-title">📊 Gráfico de COVID-19 en México</div>
+        <div class="card-description">
+          Visualización interactiva de la evolución de casos confirmados, defunciones y recuperación por estado. Herramientas: Python, PostgreSql, PowerBi.
+        </div>
+        <a href="https://github.com/16danielvm/Dashboard_COVID-19_Mexico" class="card-link">🔗 Ver repositorio</a>
+      </div>
+  
+      <div class="card">
+        <div class="card-title">🧬 Factores Influyentes en Anticuerpos post-COVID</div>
+        <div class="card-description">
+          Estudio retrospectivo con técnicas de inteligencia artificial para identificar variables clínicas y sociodemográficas que influyen en los niveles de anticuerpos contra COVID-19. Título: "Identificación de factores de niveles de anticuerpos
+          en personas post COVID-19: enfoque salud pública".
+        </div>
+        <a href="https://www.conacao.org/publicaciones/suplemento-2024" class="card-link">🔗 Ver publicación</a>
+      </div>
+  
+      <div class="card">
+        <div class="card-title">😷 Detección de Mascarilla</div>
+        <div class="card-description">
+          Sistema basado en visión por computadora que identifica si una persona lleva mascarilla correctamente usando redes neuronales convolucionales. Herramientas: Python, TensorFlow, AWS, Docker.
+        </div>
+        <a href="https://github.com/16danielvm/Mask-Detection---Neural-Networks" class="card-link">🔗 Ver repositorio</a>
+      </div>
+  
+      <div class="card">
+        <div class="card-title">😴 Detección de Estrés del Sueño</div>
+        <div class="card-description">
+          Predicción del estrés de sueño a partir de factores utilizando modelos de machine learning para detectar estrés y trastornos del sueño. Herramientas: Python, Docker.
+        </div>
+        <a href="https://github.com/16danielvm/Human-Stress-Detection-in-and-through-Sleep" class="card-link">🔗 Ver repositorio</a>
+      </div>
+  
+      <div class="card">
+        <div class="card-title">🩺 Predicción de Cirrosis Hepática</div>
+        <div class="card-description">
+          Modelo de predicción de cirrosis usando datos clínicos de pacientes, con algoritmos de clasificación supervisada. Herramientas: Python, Scikit-learn, AWS, Docker.
+        </div>
+        <a href="https://github.com/16danielvm/Multi-Class-Prediction-of-Cirrhosis-Outcomes" class="card-link">🔗 Ver repositorio</a>
+      </div>
+  
+      <div class="card">
+        <div class="card-title">📚 Blog Acumulando Riqueza</div>
+        <div class="card-description">
+          Blog educativo con artículos sobre inversión, ahorro, biografías inspiradoras y resúmenes de libros clave para alcanzar la libertad financiera.
+        </div>
+        <a href="https://acumulando-riqueza.super.site/" class="card-link" target="_blank">🔗 Visitar blog</a>
+      </div>
+  
+    </div>
+  </section>
+  
+
+  <section class="contact" id="contacto">
+    <h2>📬 Contacto</h2>
+    <br>
+    <p style="text-align: center;">¿Quieres colaborar o tienes alguna pregunta? ¡Conectemos!</p>
+    <div class="social-icons">
+      <a href="mailto:vmdaniel16@gmail.com" target="_blank">
+        <img src="https://img.icons8.com/ios-filled/50/1d3557/new-post.png" alt="Correo" title="Correo">
+      </a>
+      <a href="https://linkedin.com/in/16danielvm" target="_blank">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" title="LinkedIn">
+      </a>
+      <a href="https://github.com/16danielvm" target="_blank">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" title="GitHub">
+      </a>
+      <a href="https://x.com/16danielvm" target="_blank">
+        <img src="https://img.icons8.com/ios-filled/50/1d3557/twitterx--v2.png" alt="X (Twitter)" title="X (Twitter)">
+      </a>
+      <a href="https://acumulando-riqueza.super.site/" target="_blank">
+        <img src="assets/Logo.png" alt="Acumulando Riqueza" title="Acumulando Riqueza">
+      </a>
+    </div>
+  </section>
+  
+
+  <footer>
+    © 2025 Daniel Augusto Muñoz Viveros | Todos los derechos reservados
+  </footer>
+</body>
+</html>
